@@ -98,7 +98,7 @@ ehthumbs_vista.db
 [Dd]esktop.ini
 
 # Recycle Bin used on file shares
-$RECYCLE.BIN/
+$RECYCLE.B/IN/
 
 # Windows Installer files
 *.cab
@@ -109,4 +109,6 @@ $RECYCLE.BIN/
 # Windows shortcuts
 *.lnk
 
-/gatsby-*.js
+#/gatsby-*.js
+
+.idea
