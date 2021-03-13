@@ -1,8 +1,9 @@
 import React from 'react';
 import { stripIndent } from 'common-tags';
 
+//pluginOptions.chat.lang ? pluginOptions.chat.lang : 'us_US'
+
 exports.onRenderBody = ({ setPreBodyComponents }, pluginOptions) => {
-  const src = `https://connect.facebook.net/${pluginOptions.chat.lang ? pluginOptions.chat.lang : 'us_US'}/sdk/xfbml.customerchat.js`
   return setPreBodyComponents([
     (<script
       key={`gatsby-plugin-facebook-customer-chat`}
@@ -12,13 +13,14 @@ exports.onRenderBody = ({ setPreBodyComponents }, pluginOptions) => {
             FB.init(${JSON.stringify(pluginOptions.sdk)});
           };
 
-          (function(d, s, id){
+          (function(d, s, id, options){
             var js, fjs = d.getElementsByTagName(s)[0];
             if (d.getElementById(id)) {return;}
             js = d.createElement(s); js.id = id;
-            js.src = ${src};
+            var locale = options.chat.lang || 'us_US'
+            js.src = "https://connect.facebook.net/" + locale + "/sdk/xfbml.customerchat.js";
             fjs.parentNode.insertBefore(js, fjs);
-          }(document, 'script', 'facebook-jssdk'));
+          }(document, 'script', 'facebook-jssdk', pluginOptions);
         `}}
       />),
       (
