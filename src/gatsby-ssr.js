@@ -1,8 +1,6 @@
 import React from 'react';
 import { stripIndent } from 'common-tags';
 
-//pluginOptions.chat.lang ? pluginOptions.chat.lang : 'us_US'
-
 exports.onRenderBody = ({ setPreBodyComponents }, pluginOptions) => {
   return setPreBodyComponents([
     (<script
@@ -20,7 +18,7 @@ exports.onRenderBody = ({ setPreBodyComponents }, pluginOptions) => {
             var locale = options.chat.lang || 'us_US'
             js.src = "https://connect.facebook.net/" + locale + "/sdk/xfbml.customerchat.js";
             fjs.parentNode.insertBefore(js, fjs);
-          }(document, 'script', 'facebook-jssdk', pluginOptions));
+          }(document, 'script', 'facebook-jssdk', ${pluginOptions}));
         `}}
       />),
       (

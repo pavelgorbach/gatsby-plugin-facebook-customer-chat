@@ -1,6 +1,6 @@
 'use strict';
 
-var _templateObject = _taggedTemplateLiteral(['\n          fbAsyncInit = function() {\n            FB.init(', ');\n          };\n\n          (function(d, s, id, options){\n            var js, fjs = d.getElementsByTagName(s)[0];\n            if (d.getElementById(id)) {return;}\n            js = d.createElement(s); js.id = id;\n            var locale = options.chat.lang || \'us_US\'\n            js.src = "https://connect.facebook.net/" + locale + "/sdk/xfbml.customerchat.js";\n            fjs.parentNode.insertBefore(js, fjs);\n          }(document, \'script\', \'facebook-jssdk\', pluginOptions));\n        '], ['\n          fbAsyncInit = function() {\n            FB.init(', ');\n          };\n\n          (function(d, s, id, options){\n            var js, fjs = d.getElementsByTagName(s)[0];\n            if (d.getElementById(id)) {return;}\n            js = d.createElement(s); js.id = id;\n            var locale = options.chat.lang || \'us_US\'\n            js.src = "https://connect.facebook.net/" + locale + "/sdk/xfbml.customerchat.js";\n            fjs.parentNode.insertBefore(js, fjs);\n          }(document, \'script\', \'facebook-jssdk\', pluginOptions));\n        ']);
+var _templateObject = _taggedTemplateLiteral(['\n          fbAsyncInit = function() {\n            FB.init(', ');\n          };\n\n          (function(d, s, id, options){\n            var js, fjs = d.getElementsByTagName(s)[0];\n            if (d.getElementById(id)) {return;}\n            js = d.createElement(s); js.id = id;\n            var locale = options.chat.lang || \'us_US\'\n            js.src = "https://connect.facebook.net/" + locale + "/sdk/xfbml.customerchat.js";\n            fjs.parentNode.insertBefore(js, fjs);\n          }(document, \'script\', \'facebook-jssdk\', ', '));\n        '], ['\n          fbAsyncInit = function() {\n            FB.init(', ');\n          };\n\n          (function(d, s, id, options){\n            var js, fjs = d.getElementsByTagName(s)[0];\n            if (d.getElementById(id)) {return;}\n            js = d.createElement(s); js.id = id;\n            var locale = options.chat.lang || \'us_US\'\n            js.src = "https://connect.facebook.net/" + locale + "/sdk/xfbml.customerchat.js";\n            fjs.parentNode.insertBefore(js, fjs);\n          }(document, \'script\', \'facebook-jssdk\', ', '));\n        ']);
 
 var _react = require('react');
 
@@ -12,15 +12,13 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 function _taggedTemplateLiteral(strings, raw) { return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
 
-//pluginOptions.chat.lang ? pluginOptions.chat.lang : 'us_US'
-
 exports.onRenderBody = function (_ref, pluginOptions) {
   var setPreBodyComponents = _ref.setPreBodyComponents;
 
   return setPreBodyComponents([_react2.default.createElement('script', {
     key: 'gatsby-plugin-facebook-customer-chat',
     dangerouslySetInnerHTML: {
-      __html: (0, _commonTags.stripIndent)(_templateObject, JSON.stringify(pluginOptions.sdk)) }
+      __html: (0, _commonTags.stripIndent)(_templateObject, JSON.stringify(pluginOptions.sdk), pluginOptions) }
   }), _react2.default.createElement('div', {
     key: 'fb-customer-chat',
     className: 'fb-customerchat',
