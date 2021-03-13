@@ -17,7 +17,7 @@ exports.onRenderBody = ({ setPreBodyComponents }, pluginOptions) => {
             js = d.createElement(s); js.id = id;
             js.src = "https://connect.facebook.net/" + locale + "/sdk/xfbml.customerchat.js";
             fjs.parentNode.insertBefore(js, fjs);
-          }(document, 'script', 'facebook-jssdk', ${pluginOptions.chat.lang || 'us_US'}));
+          }(document, 'script', 'facebook-jssdk', ${JSON.stringify(pluginOptions.chat.lang) || 'ru_RU'}));
         `}}
       />),
       (

@@ -18,7 +18,7 @@ exports.onRenderBody = function (_ref, pluginOptions) {
   return setPreBodyComponents([_react2.default.createElement('script', {
     key: 'gatsby-plugin-facebook-customer-chat',
     dangerouslySetInnerHTML: {
-      __html: (0, _commonTags.stripIndent)(_templateObject, JSON.stringify(pluginOptions.sdk), pluginOptions.chat.lang || 'us_US') }
+      __html: (0, _commonTags.stripIndent)(_templateObject, JSON.stringify(pluginOptions.sdk), JSON.stringify(pluginOptions.chat.lang) || 'ru_RU') }
   }), _react2.default.createElement('div', {
     key: 'fb-customer-chat',
     className: 'fb-customerchat',
