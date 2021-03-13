@@ -15,7 +15,7 @@ function _taggedTemplateLiteral(strings, raw) { return Object.freeze(Object.defi
 exports.onRenderBody = function (_ref, pluginOptions) {
   var setPreBodyComponents = _ref.setPreBodyComponents;
 
-  var src = 'https://connect.facebook.net/' + (pluginOptions.chat.lang || 'us_US') + '/sdk/xfbml.customerchat.js';
+  var src = 'https://connect.facebook.net/' + (pluginOptions.chat.lang ? pluginOptions.chat.lang : 'us_US') + '/sdk/xfbml.customerchat.js';
   return setPreBodyComponents([_react2.default.createElement('script', {
     key: 'gatsby-plugin-facebook-customer-chat',
     dangerouslySetInnerHTML: {

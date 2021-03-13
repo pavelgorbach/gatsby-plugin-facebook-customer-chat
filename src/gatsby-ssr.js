@@ -2,7 +2,7 @@ import React from 'react';
 import { stripIndent } from 'common-tags';
 
 exports.onRenderBody = ({ setPreBodyComponents }, pluginOptions) => {
-  const src = `https://connect.facebook.net/${pluginOptions.chat.lang || 'us_US'}/sdk/xfbml.customerchat.js`
+  const src = `https://connect.facebook.net/${pluginOptions.chat.lang ? pluginOptions.chat.lang : 'us_US'}/sdk/xfbml.customerchat.js`
   return setPreBodyComponents([
     (<script
       key={`gatsby-plugin-facebook-customer-chat`}
