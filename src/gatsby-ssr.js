@@ -2,6 +2,7 @@ import React from 'react';
 import { stripIndent } from 'common-tags';
 
 exports.onRenderBody = ({ setPreBodyComponents }, pluginOptions) => {
+  const src = `https://connect.facebook.net/${pluginOptions.chat.lang || 'us_US'}/sdk/xfbml.customerchat.js`
   return setPreBodyComponents([
     (<script
       key={`gatsby-plugin-facebook-customer-chat`}
@@ -15,7 +16,7 @@ exports.onRenderBody = ({ setPreBodyComponents }, pluginOptions) => {
             var js, fjs = d.getElementsByTagName(s)[0];
             if (d.getElementById(id)) {return;}
             js = d.createElement(s); js.id = id;
-            js.src = "https://connect.facebook.net/" + (pluginOptions.chat.lang || "en_US") + "/sdk/xfbml.customerchat.js";
+            js.src = ${src};
             fjs.parentNode.insertBefore(js, fjs);
           }(document, 'script', 'facebook-jssdk'));
         `}}
