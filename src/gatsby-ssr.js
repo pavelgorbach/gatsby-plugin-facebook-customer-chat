@@ -11,14 +11,13 @@ exports.onRenderBody = ({ setPreBodyComponents }, pluginOptions) => {
             FB.init(${JSON.stringify(pluginOptions.sdk)});
           };
 
-          (function(d, s, id, options){
+          (function(d, s, id, locale){
             var js, fjs = d.getElementsByTagName(s)[0];
             if (d.getElementById(id)) {return;}
             js = d.createElement(s); js.id = id;
-            var locale = options.chat.lang || 'us_US'
             js.src = "https://connect.facebook.net/" + locale + "/sdk/xfbml.customerchat.js";
             fjs.parentNode.insertBefore(js, fjs);
-          }(document, 'script', 'facebook-jssdk', ${pluginOptions}));
+          }(document, 'script', 'facebook-jssdk', ${pluginOptions.chat.lang || 'us_US'}));
         `}}
       />),
       (
